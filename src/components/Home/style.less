@@ -1,0 +1,183 @@
+// div{
+//     touch-action: none;
+// }
+.home{
+    background-color: #fff;
+    overflow: hidden;
+}
+.home_menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    i{
+        color: #fff;
+        font-size: 20px;
+    }
+}
+.home_topbg{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: pink;
+    overflow: hidden;
+    background-image: url('https://img.zcool.cn/community/013e1a5b7a647ca801218d326f2b52.jpg@1280w_1l_2o_100sh.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home_search{
+    width: 80%;
+    height: 44px;
+    margin: 0 auto;
+    margin-top: 130px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 1px 1px 2px #666;
+    .home_searchbtn{
+        width: 100px;
+        // height: 100%;
+        background-color: #fff;
+        display: inline-block;
+        height: 100%;
+        border: none;
+    }
+    input{
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: medium;
+        padding-left: 10px;
+    }
+}
+.home_carousel{
+    margin-top: 15px;
+    // margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+.imgs{
+    width: 100%;
+    height: 120px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.name{
+    color: green;
+}
+.my-drawer {
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .my-drawer .am-drawer-sidebar {
+    background-color: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .my-drawer .am-drawer-sidebar .am-list {
+    width: 300px;
+    padding: 0;
+  }
+.drawer_content{
+    width: 70vw;
+    .avatar{
+        width: 100%;
+        // height: 60px;
+        // background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #eee;
+        flex-wrap: wrap;
+        .img{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .user_name{
+            padding: 0 15px;
+            color: #000;
+            font-size: 18px;
+        }
+    }
+}
+.am-list-item .am-list-line .am-list-content{
+    font-size: 16px;
+    color: #222;
+}
+.person_menu_list{
+    padding: 30px 10px;
+    div{
+        // display: flex;
+        // margin-bottom: 20px;
+        i{
+            display: inline-block;
+            width: 26px;
+            height: 22px;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+}
+.person_menu_list:not([data-scale]) .am-list-item:not(:last-child) .am-list-line::after{
+    background-color: transparent;
+}
+.bottom_tip{
+    width: 100%;
+    height: 120px;
+    // background-color: blueviolet;
+    position: absolute;
+    bottom: 0;
+    .tips{
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 20px;
+        // padding-bottom: 20px;
+        // align-items: center;
+        .temperature{
+            font-size: 20px;
+            color: #666666;
+            font-weight: 500;
+        }
+        .region{
+            font-size: 12px;
+            font-weight: 300;
+        }
+    }
+    .copy{
+        color: #999;
+        font-size: 12px;
+        padding: 20px;
+    }
+}
+.loadMore{
+    color: #999;
+    text-align: center;
+    .icon-tongyong_jiantouxiangxia{
+        font-size: 16px;
+        margin-left: 2px;
+    }
+}
+.title{
+    font-size: 15px;
+}
+.articlemention{
+    font-size: 12px;
+    .local{
+        margin-left: 20px;
+    }
+}
