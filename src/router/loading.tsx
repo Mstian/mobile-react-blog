@@ -1,26 +1,21 @@
 import React, { CSSProperties } from 'react';
-
+import './style.css';
 function Loading(){
     return (
-        <div style = {loadingStyle}>
-            loading...
-        </div>
+        <div id="loading">
+		<div id="loading-center">
+			<div id="loading-center-absolute">
+				<div className="object" id="object_four"></div>
+				<div className="object" id="object_three"></div>
+				<div className="object" id="object_two"></div>
+				<div className="object" id="object_one"></div>
+			</div>
+		</div>
+	</div>
     )
 }
 const loadingStyle: CSSProperties = {
-    width: "100px",
-    height: "100px",
-    backgroundColor: "rgba(0,0,0,.5)",
-    position: "fixed",
-    zIndex: 999,
-    top: '50%',
-    left: '50%',
-    marginLeft:'-50px',
-    marginTop: '-50px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#fff'
+
 }
 
 export default Loading;

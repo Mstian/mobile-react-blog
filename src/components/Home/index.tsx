@@ -1,7 +1,7 @@
 import './style.less';
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Carousel, List } from 'antd-mobile';
+import { Carousel, List, Toast} from 'antd-mobile';
 import {getArticleList} from 'Src/apis/index';
 import {formatDate} from "Src/utils/tools";
 const Item = List.Item;
@@ -18,17 +18,22 @@ function Home() {
     {img:'https://img.zcool.cn/community/01cd185f6d47b811013f3110da2d30.jpg@1280w_1l_2o_100sh.jpg'}
   ];
   const [slideIndex, setSlideIndex] = React.useState(0);
-  let [pageIndex, setPageIndex] = React.useState(1);
-  const [articleList, setArticleList] = React.useState([]);
-  const toApp = () => {
-    const id = 'lucy';
-    history.push({ pathname: '/app/' + id });
-    // props.history.push({pathname:'/app', query:{name:name}})
-    // props.history.push({pathname: '/app', state:{name:name}})
+  const [pageIndex, setPageIndex] = React.useState(1);
+  const [keyword, setKeyWord] = React.useState('');
+  const [articleList, setArticleList] = React.useState<any>([]);
+  const toSearch = () => {
+    if(!keyword) {
+      Toast.fail('请输入关键字', 1);
+      return;
+    }
+    history.push({ pathname: '/search/' + keyword });
   };
   const pageSize = 5;
+  const handleChange = (e:any) => {
+    e.persist();
+    setKeyWord(e.target.value)
+  }
   useEffect(() => {
-    console.log(pageIndex);
     getArticleList({pageIndex, pageSize})
     .then((data:any)=>{
       if (data.err === 0) {
@@ -48,8 +53,8 @@ function Home() {
           ></i>
         </div>
         <div className='home_search'>
-          <input type='home_text' />
-          <button className='home_searchbtn' onClick={toApp}>
+          <input type='home_text' placeholder="请输入文章标题关键字" value={keyword} onChange={(e) => {handleChange(e)}}/>
+          <button className='home_searchbtn' onClick={() => {toSearch()}}>
             搜索
           </button>
         </div>
@@ -92,6 +97,8 @@ function Home() {
                 onClick={() => {
                   if(!item.isLocal){
                     window.location.href = item.link;
+                  } else {
+                    history.push({ pathname: '/article/' + item._id });
                   }
                 }}
                 platform='android'

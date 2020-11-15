@@ -1,0 +1,45 @@
+.view_article{
+    position: relative;
+    min-height: calc(100vh - 200px);
+    background-color: rgb(251, 251, 251);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    .fixedimg{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 230px;
+        background-image: url('https://img.zcool.cn/community/018a875f7002b211013e4584ce5682.jpg@1280w_1l_2o_100sh.jpg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        z-index: -1;
+    }
+    .content{
+        margin-top: 200px;
+        overflow: hidden;
+        padding-bottom: 30px;
+        .content_title{
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px;
+        }
+        .content_tip{
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+            margin: 15px 0;
+            span{
+                margin-right: 4px;
+            }
+        }
+        .content_main{
+            text-align: justify;
+            padding: 0px 20px;
+            line-height: 24px;
+            // background-color: #fff !important;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import './style.less';
 // import spider from 'Src/spider.jpeg';
 import React from 'react';
 function App(props: any) {
-  console.log(props);
+  // console.log(props);
   const { count, addNumber, minNumber, addTwo} = props;
   const name = props.match.params.id; // 路由传参 params 需配置路由 刷新数据不丢失
   // const name = props.location.query.name; // query 刷新丢失数据

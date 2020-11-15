@@ -1,18 +1,19 @@
 import axios from 'axios'
 import Qs from 'qs';
-
+import {Toast} from "antd-mobile";
 const $axios = axios.create({
   // 设置超时时间
   timeout: 30000,
   // 基础url，会在请求url中自动添加前置链接
-  baseURL: ""
+  baseURL: "http://www.tianleilei.cn"
 })
 // 在全局请求和响应拦截器中添加请求状态
-let loading = null
+// let loading = null
 
 // 请求拦截器
 $axios.interceptors.request.use(
   config => {
+    Toast.loading("加载中...");
     return config
   },
   error => {
@@ -22,6 +23,7 @@ $axios.interceptors.request.use(
 // 响应拦截器
 $axios.interceptors.response.use(
   response => {
+    Toast.hide();
     const code = response.status
     if ((code >= 200 && code < 300) || code === 304) {
       return Promise.resolve(response.data)
@@ -30,6 +32,7 @@ $axios.interceptors.response.use(
     }
   },
   error => {
+    Toast.hide();
     console.log(error)
     if (error.response) {
       switch (error.response.status) {

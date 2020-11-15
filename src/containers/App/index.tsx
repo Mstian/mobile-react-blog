@@ -15,7 +15,6 @@ const mapDispatchToProps = (dispatch: any) => {
         addTwo: (two: any) => {dispatch(addTwo(two))}
     }
 }
-console.log('appmapsss');
 const AppMap: any = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default withRouter(AppMap);
